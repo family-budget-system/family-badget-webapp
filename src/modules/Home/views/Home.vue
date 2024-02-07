@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>family-budget-frontend</div>
+  <div class="text-red-500">family-budget-frontend</div>
 </template>
 
 <style scoped>
