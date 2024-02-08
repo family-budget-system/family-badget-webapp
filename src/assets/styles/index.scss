@@ -1,0 +1,41 @@
+@import "fonts.css";
+@import "typography";
+@import "animations.scss";
+
+.family-open-sans {
+  font-family: OpenSans, serif;
+}
+
+body {
+  @apply bg-cultured family-open-sans text-auroMetalSaurus
+}
+
+.card {
+  @apply p-6 rounded-2xl border-[1px];
+
+  &--white {
+    @apply bg-ghostWhite border-lavender
+  }
+
+  &--blue {
+    @apply bg-lavenderLight border-lavender
+  }
+}
+
+.blue-link {
+  @apply text-brightNavyBlueSolid underline cursor-pointer
+}
+
+
+.text-label {
+  @apply font-sans text-ceil text-xs absolute family-open-sans;
+
+  &--error {
+    animation: shake 0.3s;
+    @apply text-tuscanySolid;
+  }
+
+  &--disabled {
+    @apply text-darkElectricBlue
+  }
+}

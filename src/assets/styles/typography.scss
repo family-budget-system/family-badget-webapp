@@ -1,0 +1,16 @@
+
+.title {
+    @apply text-richBlack text-2xl font-bold
+}
+
+.section-title {
+    @apply text-richBlack text-xl font-bold;
+
+    &--lg {
+        @apply text-lg
+    }
+}
+
+.card-title {
+    @apply text-lg text-richBlack font-bold
+}
