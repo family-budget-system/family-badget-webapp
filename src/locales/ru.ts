@@ -52,14 +52,11 @@ const locale = {
     }
   },
   navigation: {
-    home: "Главная страница",
-    consumers: "Потребители",
-    contracts: "Договоры",
-    objects: "Объекты",
-    calculation: "Расчёт",
+    operations: "Операции",
+    accounts: "Счета",
+    plans: "Планы",
     reports: "Отчёты",
-    payments: "Платежи",
-    administration: "Администрирование",
+    analytics: "Аналитика",
     personalArea: "Личный кабинет"
   },
   consumerCard: {

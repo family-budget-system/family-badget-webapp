@@ -9,13 +9,11 @@
   const { t } = useI18n()
 
   const menuItems = computed(() => [
-    { icon: "home", value: "home" },
-    { icon: "group", value: "consumers" },
-    { icon: "receipt", value: "contracts" },
-    { icon: "building-house", value: "objects" },
-    { icon: "calculator", value: "calculation" },
+    { icon: "swap", value: "operations" },
+    { icon: "creditCard", value: "accounts" },
+    { icon: "notebookMultiple", value: "plans" },
+    { icon: "poll", value: "analytics" },
     { icon: "detail", value: "reports" },
-    { icon: "money", value: "payments" },
     { icon: "user", value: "personalArea" },
   ])
 

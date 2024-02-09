@@ -17,7 +17,9 @@ defineProps({
 <template>
   <div class="card card--white border-none rounded-none grid grid-cols-12 gap-12 py-3 items-center">
     <div class="col-span-2 cursor-pointer" @click="router.push({ name: 'home' })">
-      <img src="@/assets/images/logo.png" class="basis-[155px]" alt="">
+      <div class="text-3xl">
+        Logo
+      </div>
     </div>
 
     <div v-if="!showOnlyLogo" class="col-span-5">
