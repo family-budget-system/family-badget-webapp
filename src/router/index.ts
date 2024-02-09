@@ -9,6 +9,12 @@ const router = createRouter({
       meta: { layout: "main" },
       component: () => import("@/modules/Home/views/Home.vue")
     },
+    {
+      path: "/operations",
+      name: "operations",
+      meta: { layout: "main" },
+      component: () => import("@/modules/operations/views/OperationsListView.vue")
+    }
   ]
 })
 

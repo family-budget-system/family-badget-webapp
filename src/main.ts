@@ -16,6 +16,7 @@ async function bootstrap() {
   const app: any = createApp(App)
 
   registrationIconsComponentsGlobally(app)
+  registrationTipComponentsGlobally(app)
   app.use(i18n)
   app.use(router)
   app.use(pinia)
@@ -33,6 +34,14 @@ function registrationIconsComponentsGlobally(app: any) {
     const componentName = (path as any).split('/').pop().replace(/\.\w+$/, '')
 
     // Register component on this Vue instance
+    app.component(componentName, (definition as any).default)
+  })
+}
+
+function registrationTipComponentsGlobally(app: any) {
+  const components = import.meta.glob('./components/tips/*.vue', { eager: true })
+  Object.entries(components).forEach(([path, definition]) => {
+    const componentName = (path as any).split('/').pop().replace(/\.\w+$/, '')
     app.component(componentName, (definition as any).default)
   })
 }
