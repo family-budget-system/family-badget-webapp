@@ -14,6 +14,12 @@ const router = createRouter({
       name: "operations",
       meta: { layout: "main" },
       component: () => import("@/modules/operations/views/OperationsListView.vue")
+    },
+    {
+      path: "/accounts",
+      name: "accounts",
+      meta: { layout: "main" },
+      component: () => import("@/modules/accounts/views/AccountsListView.vue")
     }
   ]
 })

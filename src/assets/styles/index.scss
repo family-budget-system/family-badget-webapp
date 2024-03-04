@@ -26,6 +26,10 @@ body {
   @apply text-brightNavyBlueSolid underline cursor-pointer
 }
 
+.action-button {
+  @apply text-brightNavyBlueSolid inline-flex gap-3 items-center cursor-pointer hover:underline
+}
+
 
 .text-label {
   @apply font-sans text-ceil text-xs absolute family-open-sans;
