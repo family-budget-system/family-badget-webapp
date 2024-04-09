@@ -7,7 +7,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       meta: { layout: "main" },
-      component: () => import("@/modules/Home/views/Home.vue")
+      component: () => import("@/modules/home/views/Home.vue")
     },
     {
       path: "/operations",
@@ -20,7 +20,13 @@ const router = createRouter({
       name: "accounts",
       meta: { layout: "main" },
       component: () => import("@/modules/accounts/views/AccountsListView.vue")
-    }
+    },
+    {
+      path: "/login",
+      name: "login",
+      meta: { layout: "auth" },
+      component: () => import("@/modules/auth/views/LoginView.vue")
+    },
   ]
 })
 
