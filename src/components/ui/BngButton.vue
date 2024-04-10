@@ -22,7 +22,7 @@ defineProps({
     :class="{
       'text-brightNavyBlueSolid bg-lavenderLight hover:bg-lavender border-[1px] border-lavender': !secondary,
       'text-richBlack bg-white hover:bg-azureishWhite': secondary && !disabled,
-      'border-[1px] border-darkElectricBlue': outlined && !disabled,
+      'border-[1px] border-azureishWhite text-richBlack': outlined && !disabled,
       'bg-transparent text-darkElectricBlue border-[1px] border-lavender': disabled,
     }"
     :disabled="disabled"

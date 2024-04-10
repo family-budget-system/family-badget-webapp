@@ -5,7 +5,7 @@ import AppHeader from "@/components/app/AppHeader.vue";
 
 <template>
   <AppHeader show-only-logo />
-  <main class="mx-4 max-md:mt-8 max-xl:mt-12 xl:mt-24 flex justify-center items-center">
+  <main class="max-sm:mx-2 mx-4 max-md:mt-8 max-xl:mt-12 xl:mt-24 flex justify-center items-center">
     <router-view />
   </main>
 </template>

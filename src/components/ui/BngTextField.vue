@@ -243,6 +243,6 @@ export default defineComponent({
 	.customInput {
 		outline: none;
 		box-shadow: none;
-		@apply focus:shadow-none focus:ring-0 max-sm:text-sm w-full;
+		@apply max-sm:px-4 focus:shadow-none focus:ring-0 max-sm:text-sm w-full;
 	}
 </style>
