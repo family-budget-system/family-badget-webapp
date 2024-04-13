@@ -9,6 +9,12 @@ export default defineConfig({
   plugins: [vue(), checker({ typescript: true })],
   server: {
     port: 8090,
+    proxy: {
+      '/api': {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+      }
+    }
   },
   resolve: {
     alias: {

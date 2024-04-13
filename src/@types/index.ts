@@ -27,3 +27,7 @@ export type TabType = {
   name: string;
   error: boolean;
 }
+
+export interface TokenData {
+  access_token: string;
+}

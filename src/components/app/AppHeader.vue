@@ -4,7 +4,7 @@ import BngTextField from "@/components/ui/BngTextField.vue";
 import BngSelect from "@/components/ui/BngSelect.vue";
 import BngExitIcon from "@/assets/icons/BngExitIcon.vue";
 import BngIcon from "@/components/ui/BngIcon.vue";
-import router from "@/router";
+import {useRouter} from "vue-router";
 
 defineProps({
   showOnlyLogo: {
@@ -12,6 +12,12 @@ defineProps({
     default: false,
   }
 })
+
+const router = useRouter()
+
+const logout = () => {
+  router.push({ name: "login" })
+}
 </script>
 
 <template>
@@ -40,7 +46,7 @@ defineProps({
     </div>
 
     <div v-if="!showOnlyLogo" class="col-span-2 justify-self-end text-auroMetalSaurus hover:text-brightNavyBlueSolid cursor-pointer">
-      <div class="flex gap-2 items-center">
+      <div @click="logout" class="flex gap-2 items-center">
         <div>Выход</div>
         <bng-icon><bng-exit-icon /></bng-icon>
       </div>
