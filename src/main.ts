@@ -1,6 +1,6 @@
 import "@/assets/styles/index.scss"
 import "@/assets/styles/tailwind.css"
-import { createApp } from 'vue'
+import {createApp, Directive} from 'vue'
 import { createPinia } from 'pinia'
 
 import App from './App.vue'
@@ -21,6 +21,20 @@ async function bootstrap() {
   app.use(router)
   app.use(pinia)
   app.directive("mask", vMaska)
+
+  app.directive("click-outside", <Directive>{
+    mounted(element, { value }) {
+      element.clickOutside = function (event: Event) {
+        if (!(element == event.target || element.contains(event.target))) {
+          value(event)
+        }
+      }
+      document.body.addEventListener("click", element.clickOutside);
+    },
+    unmounted(element) {
+      document.body.removeEventListener("click", element.clickOutside)
+    }
+  })
 
   app.mount('#app');
 }
