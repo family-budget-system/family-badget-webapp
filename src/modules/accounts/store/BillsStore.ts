@@ -1,34 +1,28 @@
 import {defineStore} from "pinia";
-import {computed} from "vue";
+import {computed, Ref, ref} from "vue";
 import {BillTypeEnum, CurrencyEnum} from "@/@types/bills.types.ts";
+import {BillItem} from "@/modules/accounts/@types";
+import {BillsService} from "@/services/bills.service.ts";
 
 
 export const useBillsStore = defineStore("billsStore", () => {
-  const bills = computed(() => [
-    {
-      id: 1,
-      billType: BillTypeEnum.CASH,
-      balance: 11000,
-      name: "Моя наличка",
-      currency: CurrencyEnum.KZT,
-    },
-    {
-      id: 2,
-      billType: BillTypeEnum.CARD,
-      balance: 122657,
-      name: "Каспи ред",
-      currency: CurrencyEnum.KZT,
-    },
-    {
-      id: 3,
-      billType: BillTypeEnum.CARD,
-      balance: 122657,
-      name: "Основная карта",
-      currency: CurrencyEnum.KZT,
-    }
-  ])
+  const bills: Ref<BillItem[]> = ref([])
+
+  const fetchBills = async () => {
+    bills.value = await BillsService.fetchBills()
+  }
+
+  const getBillTypeTitle = (type: BillTypeEnum) => {
+    if (BillTypeEnum.CASH === type) return "Наличные"
+    else if (BillTypeEnum.CARD === type) return "Карта"
+    else if (BillTypeEnum.BANK_BILL === type) return "Банковский счет"
+    else if (BillTypeEnum.DEPOSIT === type) return "Депозит"
+    else return "Кредит"
+  }
 
   return {
-    bills
+    bills,
+    fetchBills,
+    getBillTypeTitle,
   }
 })
