@@ -135,8 +135,6 @@ watch(() => searchText.value, (value: string) => {
 })
 
 const itemSelected = (item: any) => {
-  console.log("select", item)
-
   selected.value = item
   isOpen.value = false
   if (item === null) {

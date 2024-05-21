@@ -2,9 +2,12 @@ import axios, {AxiosError} from "axios";
 import {TokenService} from "@/token.service.ts";
 import {useNotificationStore} from "@/stores/NotificationStore.ts";
 import {useRouter} from "vue-router";
+import {BASE_API_URL} from "@/config/const.ts";
 
 
-const Api = axios.create();
+const Api = axios.create({
+  baseURL: BASE_API_URL,
+});
 
 Api.interceptors.request.use(async (config) => {
   if (TokenService.tokens.accessToken) {

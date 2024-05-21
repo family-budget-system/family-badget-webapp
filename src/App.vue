@@ -5,6 +5,7 @@ import EmptyLayout from "@/components/layouts/EmptyLayout.vue";
 import MainLayout from "@/components/layouts/MainLayout.vue";
 import AuthLayout from "@/components/layouts/AuthLayout.vue";
 import BngNotificationComponent from "@/components/ui/BngNotificationComponent.vue";
+import {useRefsStore} from "@/stores/RefsStore.ts";
 
 export default defineComponent({
   name: "App",
@@ -14,10 +15,12 @@ export default defineComponent({
     MainLayout,
     AuthLayout,
   },
+  async mounted() {
+    await useRefsStore().initRefs()
+  },
   setup() {
     const route = useRoute()
     const layout = computed(() => (route.meta.layout || 'Empty') + '-layout')
-
     return {
       layout
     }
