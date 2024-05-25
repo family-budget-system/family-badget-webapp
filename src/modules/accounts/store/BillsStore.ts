@@ -12,17 +12,32 @@ export const useBillsStore = defineStore("billsStore", () => {
     bills.value = await BillsService.fetchBills()
   }
 
-  const getBillTypeTitle = (type: BillTypeEnum) => {
-    if (BillTypeEnum.CASH === type) return "Наличные"
-    else if (BillTypeEnum.CARD === type) return "Карта"
-    else if (BillTypeEnum.BANK_BILL === type) return "Банковский счет"
-    else if (BillTypeEnum.DEPOSIT === type) return "Депозит"
-    else return "Кредит"
+  const getBillType = (type: BillTypeEnum): { icon: string, title: string } => {
+    if (BillTypeEnum.CASH === type) return {
+      title: "Наличные",
+      icon: "cash"
+    }
+    else if (BillTypeEnum.CARD === type) return {
+      title: "Карта",
+      icon: "credit-card"
+    }
+    else if (BillTypeEnum.BANK_BILL === type) return {
+      title: "Банковский счет",
+      icon: "bank"
+    }
+    else if (BillTypeEnum.DEPOSIT === type) return {
+      title: "Депозит",
+      icon: "credit-card"
+    }
+    else return {
+        title: "Кредит",
+        icon: "credit-card"
+      }
   }
 
   return {
     bills,
     fetchBills,
-    getBillTypeTitle,
+    getBillType,
   }
 })

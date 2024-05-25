@@ -25,6 +25,13 @@ export type CategoryItemType = {
   createdAt: string
   updatedAt: string
   isDefault: boolean
+  icon: ServerIcon
+}
+
+export type ServerIcon = {
+  id: number
+  name: string
+  svgContent: string
 }
 
 export type CreateTransactionType = {

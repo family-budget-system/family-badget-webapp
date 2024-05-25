@@ -3,7 +3,7 @@ import {computed, ref} from "vue";
 
 export const useTipsStore = defineStore("tipsStore", () => {
   const operationTips = ref([
-    { componentName: "AddAccountTip", show: true },
+    { componentName: "AddAccountTip", show: false },
   ])
 
   const visibleOperationTips = computed(() => operationTips.value.filter(tip => tip.show))

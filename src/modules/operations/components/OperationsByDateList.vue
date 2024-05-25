@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import {computed, PropType} from "vue";
+import {PropType} from "vue";
 import {OperationItemType} from "@/modules/operations/@types";
 import OperationCardComponent from "@/modules/operations/components/OperationCardComponent.vue";
 import {formatPublishedDate} from "@/utils/format-date.utils.ts";

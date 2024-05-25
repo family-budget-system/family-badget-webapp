@@ -57,7 +57,8 @@ const locale = {
     plans: "Планы",
     reports: "Отчёты",
     analytics: "Аналитика",
-    personalArea: "Личный кабинет"
+    personalArea: "Личный кабинет",
+    administration: "Настройки",
   },
   consumerCard: {
     title: "Карточка потребителя",

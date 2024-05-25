@@ -1,6 +1,6 @@
 
 
 export enum TransactionTypeEnum {
+  consumption = 'consumption',
   income = 'income',
-  transfer = 'transfer',
 }
