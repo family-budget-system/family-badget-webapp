@@ -1,4 +1,4 @@
-import {BillItem, CreateBillDto} from "@/modules/accounts/@types";
+import {BillItemType, CreateBillDto} from "@/modules/accounts/@types";
 import {Api} from "@/services/web-client.ts";
 
 
@@ -9,7 +9,7 @@ export class BillsService {
     return await Api.post(`${this.baseUrl}`, payload)
   }
 
-  public static async fetchBills(): Promise<BillItem[]> {
+  public static async fetchBills(): Promise<BillItemType[]> {
     const res = await Api.get(`${this.baseUrl}`)
     return res.data
   }

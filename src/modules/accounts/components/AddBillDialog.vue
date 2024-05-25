@@ -12,7 +12,7 @@ import {BillModelForm} from "@/modules/accounts/@types";
 import {CleaveRules} from "@/config/cleave-rules.ts";
 import useVuelidate from "@vuelidate/core";
 import {required} from "@/utils/i18n-validators.ts";
-import {BillsService} from "@/services/bills.service.ts";
+import {BillsService} from "@/services/web-api/bills.service.ts";
 
 const refsStore = useRefsStore()
 

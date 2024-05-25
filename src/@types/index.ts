@@ -10,12 +10,6 @@ export type RangeLocalDate = {
   upperBoundClosed: boolean;
 }
 
-export enum ConsumerEnums {
-  CONSUMT_LEGAL = "consumt_legal",
-  CONSUMT_IP = "consumt_ip",
-  CONSUMT_INDIVIDUAL = "consumt_individual",
-}
-
 export enum InterfaceModsEnum {
   EDIT = "edit",
   CREATE = "create",
@@ -30,4 +24,17 @@ export type TabType = {
 
 export interface TokenData {
   access_token: string;
+}
+
+export interface PageableDataResponse {
+  items: unknown;
+  meta: PageableMeta
+}
+
+export interface PageableMeta {
+  totalItems: number
+  itemCount: number
+  itemsPerPage: number
+  totalPages: number
+  currentPage: number
 }

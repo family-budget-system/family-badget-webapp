@@ -11,7 +11,7 @@ import {computed, onMounted} from "vue";
 const billsStore = useBillsStore()
 
 onMounted(async () => {
-  billsStore.fetchBills()
+  await billsStore.fetchBills()
 })
 </script>
 
@@ -29,7 +29,7 @@ onMounted(async () => {
           <div class="text-sm text-ceil">{{ billsStore.getBillTypeTitle(bill.billType) }}</div>
         </div>
       </div>
-      <div>{{ formatCurrencyUtils(bill.balance) }}</div>
+      <div>{{ formatCurrencyUtils(bill.balance, "KZT") }}</div>
     </div>
   </div>
 </template>

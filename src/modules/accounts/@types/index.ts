@@ -12,7 +12,7 @@ export interface CreateBillDto {
   balance: number;
 }
 
-export interface BillItem {
+export interface BillItemType {
   id: number,
   title: string,
   billType: BillTypeEnum,

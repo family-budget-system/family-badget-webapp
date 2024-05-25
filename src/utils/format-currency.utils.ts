@@ -1,4 +1,4 @@
 
-export function formatCurrencyUtils(value: number) {
-  return new Intl.NumberFormat("ru-RU", { style: "currency", currency: "KZT", currencyDisplay: "narrowSymbol" }).format(value)
+export function formatCurrencyUtils(value: number, currency: string) {
+  return new Intl.NumberFormat("ru-RU", { style: "currency", currency, currencyDisplay: "narrowSymbol" }).format(value)
 }

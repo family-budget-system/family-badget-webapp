@@ -1,5 +1,5 @@
 import {Api} from "@/services/web-client.ts";
-import {AuthorizationResponse, LoginPayload, UserInfoResponse} from "@/services/web-api/@types/AuthTypes.ts";
+import {AuthorizationResponse, LoginPayload, UserInfoResponse} from "@/services/web-api/@types/auth.types.ts";
 
 
 export class AuthService {
