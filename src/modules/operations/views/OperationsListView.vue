@@ -52,9 +52,6 @@ const operationsByDate = computed(() => {
       <bng-observer v-if="!lastPage && !isLoading" @intersect="intersect" />
     </div>
   </div>
-  <div class="flex flex-col gap-6">
-    <div class="card"></div>
-  </div>
 </template>
 
 <style scoped>

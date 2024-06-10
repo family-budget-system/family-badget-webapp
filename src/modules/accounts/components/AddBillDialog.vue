@@ -13,6 +13,7 @@ import {CleaveRules} from "@/config/cleave-rules.ts";
 import useVuelidate from "@vuelidate/core";
 import {required} from "@/utils/i18n-validators.ts";
 import {BillsService} from "@/services/web-api/bills.service.ts";
+import {useNotificationStore} from "@/stores/NotificationStore.ts";
 
 const refsStore = useRefsStore()
 
@@ -32,6 +33,8 @@ const rules = {
 }
 
 const v$ = useVuelidate(rules, form)
+
+const emit = defineEmits(['billCreated'])
 
 const showDialog = () => {
   (dialog.value as any).showDialog()
@@ -61,11 +64,15 @@ const submit = async () => {
   if (!(await v$.value.$validate())) return
 
   await BillsService.saveNewBill({
-    balance: form.value.balance,
+    balance: Number(form.value.balance),
     billType: form.value.billType,
-    currencyId: form.value.currencyId,
+    currencyId: Number(form.value.currencyId),
     title: form.value.title,
   })
+
+  useNotificationStore().setNotification({ message: "Счёт успешно создан", color: 'success' })
+  emit('billCreated')
+  closeDialog()
 }
 </script>
 
@@ -80,7 +87,6 @@ const submit = async () => {
         :error="v$.title.$error"
         :error-messages="v$.title.$errors"
       />
-
       <BngSelect
         label="Тип счёта"
         placeholder="Выберите тип счёта"
@@ -89,7 +95,6 @@ const submit = async () => {
         item-text="name"
         v-model="form.billType"
       />
-
       <BngComboboxComponent
         label="Валюта"
         placeholder="Тип валюты"
@@ -101,7 +106,6 @@ const submit = async () => {
         :error="v$.currencyId.$error"
         :error-messages="v$.currencyId.$errors"
       />
-
       <bng-text-field
         label="Начальный баланс"
         placeholder="Введите изначальную сумму"

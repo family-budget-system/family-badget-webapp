@@ -51,6 +51,8 @@ const billsStore = useBillsStore()
   </div>
 </template>
 
-<style scoped>
-
+<style lang="scss" scoped>
+  svg {
+    @apply w-6 h-6;
+  }
 </style>

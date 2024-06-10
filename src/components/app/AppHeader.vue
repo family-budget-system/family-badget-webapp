@@ -23,8 +23,11 @@ const logout = () => {
 <template>
   <div class="card card--white border-none rounded-none grid grid-cols-12 gap-12 py-3 items-center">
     <div class="col-span-2 cursor-pointer" @click="router.push({ name: 'home' })">
-      <div class="text-3xl">
-        Logo
+      <div class="text-xl flex gap-3 items-center">
+        <img class="w-10" src="@/assets/images/logo.svg" alt="">
+        <div class="text-richBlack font-semibold">
+          FamilyGuard
+        </div>
       </div>
     </div>
 
